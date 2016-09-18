@@ -1,6 +1,5 @@
 //TODO:
 //add icon
-//load elements
 //delete elements
 //hide & show add form
 //periodic checks
@@ -9,13 +8,35 @@
 
 $(document).ready(function() {
     var elInterval = $( "#interval" );
+    var elListElements = $( "#listElements" );
 
     /* #########################
      ## initial data association
      ###########################  */
     elInterval.val(localStorage.getItem("interval"));
-    if(localStorage.getItem("elements")) var elements = JSON.parse(localStorage.getItem("elements"));
+    if(localStorage.getItem("elements")) {
+        var elements = JSON.parse(localStorage.getItem("elements"));
+
+        if(!elements || !elements.elements || !Array.isArray(elements.elements)) elements = { elements: []};
+    }
     else var elements = { elements: []};
+
+    function getList(elements)
+    {
+        //clear list
+        elListElements.empty();
+
+        //draw elements
+        elements.elements.forEach(function(element, index) {
+            var child = document.createElement( "div" );
+            child.id = "element-" + index;
+            child.innerHTML = element.name;
+
+            elListElements.append(child);
+        });
+    }
+
+    getList(elements);
 
 
     /* #########################
@@ -37,15 +58,12 @@ $(document).ready(function() {
 
         if(elementName)
         {
-            console.log(elements.elements);
-
             elements.elements.push({name: elementName});
             localStorage.setItem("elements", JSON.stringify(elements));
 
-            //TODO: reload list
+            getList(elements);
             chrome.extension.getBackgroundPage().window.location.reload(true);
         }
-        console.log(elements);
     });
 
     //store interval
