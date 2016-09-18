@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <title>ServerCheck</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+        font-size: 100%;
+        background-color: #494a48;
+        width: 250px;
+      }
+      #title, #options {
+        font-size: 12px;
+        color: #ffffff;
+        font-weight: bold;
+        width: 100%;
+        border-bottom: 1px solid #666;
+        padding: 5px 0;
+      }
+      #listElements {
+        width: 100%;
+        border-bottom: 1px solid #666;
+        padding: 5px 0;
+      }
+
+      #formAdd {
+        width: 100%;
+        border-bottom: 1px solid #666;
+        padding: 5px 0;
+        vertical-align: middle;
+      }
+      input {
+        padding: 0.2em;
+        /* the following ensures they're all using the same box-model for rendering */
+        -moz-box-sizing: content-box; /* or `border-box` */
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box;
+        background-color: #ffffff;
+        border: 1px solid #666;
+        font-size: 12px;
+        height: 20px;
+
+      }
+      input[type="button"] {
+        border-radius: 50%;
+        width: 20px;
+        font-size: 16px;
+      }
+    </style>
+
+    <script src="jquery.min.js"></script>
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <div id="title">ServerCheck</div>
+    <div id="listElements"></div>
+    <div id="formAdd">
+      <input type="text" name="elementName" />
+      <input type="button" value="+" />
+    </div>
+    <div id="options">Options</div>
+  </body>
+</html>
+
