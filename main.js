@@ -1,6 +1,5 @@
 //TODO:
 //add icon
-//save elements
 //load elements
 //delete elements
 //hide & show add form
@@ -15,6 +14,9 @@ $(document).ready(function() {
      ## initial data association
      ###########################  */
     elInterval.val(localStorage.getItem("interval"));
+    if(localStorage.getItem("elements")) var elements = JSON.parse(localStorage.getItem("elements"));
+    else var elements = { elements: []};
+
 
     /* #########################
      ## initial settings
@@ -31,7 +33,19 @@ $(document).ready(function() {
 
     //add Element
     $( "#buttonSave" ).on('click', function() {
+        var elementName = $( "input[name=elementName]").val();
 
+        if(elementName)
+        {
+            console.log(elements.elements);
+
+            elements.elements.push({name: elementName});
+            localStorage.setItem("elements", JSON.stringify(elements));
+
+            //TODO: reload list
+            chrome.extension.getBackgroundPage().window.location.reload(true);
+        }
+        console.log(elements);
     });
 
     //store interval
@@ -40,7 +54,7 @@ $(document).ready(function() {
 
         if(!isNaN(val) && val >= 1)
         {
-            //save
+            //save interval option & reload background task
             localStorage.setItem("interval", val);
             chrome.extension.getBackgroundPage().window.location.reload(true);
         }
