@@ -6,7 +6,9 @@ function getStatus()
 }
 
 //register alarm
-chrome.alarms.create("getStatus", {periodInMinutes:interval});
-chrome.alarms.onAlarm.addListener(function(alarm){
-    getStatus();
-});
+if(!isNaN(interval) && interval >= 1) {
+    chrome.alarms.create("getStatus", {periodInMinutes: interval});
+    chrome.alarms.onAlarm.addListener(function (alarm) {
+        getStatus();
+    });
+}
