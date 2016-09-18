@@ -1,10 +1,12 @@
+var interval = parseInt(localStorage.getItem("interval"));
+
 function getStatus()
 {
-    console.log('test');
+    console.log(interval);
 }
 
 //register alarm
-chrome.alarms.create("getStatus", {periodInMinutes:1});
+chrome.alarms.create("getStatus", {periodInMinutes:interval});
 chrome.alarms.onAlarm.addListener(function(alarm){
     getStatus();
 });

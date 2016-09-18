@@ -46,19 +46,27 @@
         width: 20px;
         font-size: 16px;
       }
+      #formOptions {
+        width: 100%;
+        padding: 5px 0;
+      }
     </style>
 
-    <script src="jquery.min.js"></script>
-    <script src="main.js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="lib/type.js"></script>
+    <script type="text/javascript" src="main.js"></script>
   </head>
   <body>
     <div id="title">ServerCheck</div>
     <div id="listElements"></div>
     <div id="formAdd">
       <input type="text" name="elementName" />
-      <input type="button" value="+" />
+      <input type="button" id="buttonSave" value="+" />
     </div>
     <div id="options">Options</div>
+    <div id="formOptions">
+      <input type="number" id="interval" name="interval" min="1" step="1">
+    </div>
   </body>
 </html>
 
