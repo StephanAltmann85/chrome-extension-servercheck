@@ -8,7 +8,7 @@
     "description": "Unit of interval"
   },
   "intervalLabel": {
-    "message": "Prüfen alle",
+    "message": "Prüfung alle",
     "description": "Label for interval field"
   }
 }

@@ -1,19 +1,20 @@
 //TODO:
-//add icon
-//hide & show add form
 //periodic checks
 //notifictation
-//styling
 
 $(document).ready(function() {
     var elInterval = $( "#interval" );
     var elListElements = $( "#listElements" );
     var elOptionsMainLabel = $("#options");
+    var elOptionsUnit = $("#optionsUnit");
+    var elIntervalLabel = $("#intervalLabel");
 
     /* #########################
      ## get translations
      ###########################  */
     elOptionsMainLabel.html(chrome.i18n.getMessage("optionsMainLabel"));
+    elOptionsUnit.html(chrome.i18n.getMessage("optionsUnit"));
+    elIntervalLabel.html(chrome.i18n.getMessage("intervalLabel"));
 
     /* #########################
      ## initial data association
