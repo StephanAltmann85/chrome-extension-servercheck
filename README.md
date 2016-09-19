@@ -6,6 +6,9 @@ Extension for checking availability of several websites
 ![Screenshot](http://salty.rocks/sites/default/files/inline-images/screenshot_sc.png)
 
 ## Changes
+### 1.0.3
+* fixed layout for add button
+
 ### 1.0.2
 * added plugin description
 * changed path for images
