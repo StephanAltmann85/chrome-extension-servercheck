@@ -1,6 +1,3 @@
-//TODO:
-//notifictation
-
 var interval = parseInt(localStorage.getItem("interval"));
 
 function getReq() {
@@ -43,21 +40,34 @@ function getStatus()
         {
             if(xhr.readyState === 4 && xhr.status && xhr.status >= 200 && xhr.status <= 300)
             {
-                //success
+                //used for debug
             }
             else
             {
-                //output notification with status code
-                console.error(xhr.status);
+                chrome.notifications.create(element.name, {
+                    type: 'basic',
+                    title: element.name,
+                    iconUrl: "error.png",
+                    message: chrome.i18n.getMessage("errorStatus") + xhr.status
+                }, function(notificationId) {});
             }
         };
         xhr.onerror = function (e) {
-            //output notification with status text
-            console.error(xhr.statusText);
+            chrome.notifications.create(element.name, {
+                type: 'basic',
+                title: element.name,
+                iconUrl: "error.png",
+                message: chrome.i18n.getMessage("errorUndefined") + xhr.statusText
+            }, function(notificationId) {});
         };
         xhr.ontimeout = function (e) {
             //output notification with message timeout
-            console.log('timeout');
+            chrome.notifications.create(element.name, {
+                type: 'basic',
+                title: element.name,
+                iconUrl: "error.png",
+                message: chrome.i18n.getMessage("errorTimeout") + xhr.timeout + 'ms'
+            }, function(notificationId) {});
         };
         xhr.send(null);
     });

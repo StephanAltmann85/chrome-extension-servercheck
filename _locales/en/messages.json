@@ -10,5 +10,17 @@
   "intervalLabel": {
     "message": "Check every",
     "description": "Label for interval field"
+  },
+  "errorTimeout": {
+    "message": "Connection timed out after ",
+    "description": "Error message for timeouts"
+  },
+  "errorStatus": {
+    "message": "Failed to load resource: the server responded with a status of ",
+    "description": "Error message for wrong status"
+  },
+  "errorUndefined": {
+    "message": "An error occurred loading ressource: ",
+    "description": "Error message for undefined errors"
   }
 }
