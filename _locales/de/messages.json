@@ -1,4 +1,8 @@
 {
+  "description": {
+    "message": "Erweiterung zur Prüfung der Verfügbarkeit diverser Websites",
+    "description": "Plugin description"
+  },
   "optionsMainLabel": {
     "message": "Options",
     "description": "Label for Option"

@@ -3,7 +3,7 @@
 
   "name": "ServerCheck",
   "default_locale": "en",
-  "description": "Extension",
+  "description": "__MSG_description__",
   "version": "1.0.2",
 
   "browser_action": {

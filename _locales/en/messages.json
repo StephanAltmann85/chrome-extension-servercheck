@@ -1,4 +1,8 @@
 {
+  "description": {
+    "message": "Extension for checking availability of several websites",
+    "description": "Plugin description"
+  },
   "optionsMainLabel": {
     "message": "Options",
     "description": "Label for Option"
