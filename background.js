@@ -52,7 +52,7 @@ function getStatus()
                 chrome.notifications.create(element.name, {
                     type: 'basic',
                     title: element.name,
-                    iconUrl: "error.png",
+                    iconUrl: "images/error.png",
                     message: chrome.i18n.getMessage("errorStatus") + xhr.status
                 }, function(notificationId) {});
             }
@@ -61,7 +61,7 @@ function getStatus()
             chrome.notifications.create(element.name, {
                 type: 'basic',
                 title: element.name,
-                iconUrl: "error.png",
+                iconUrl: "images/error.png",
                 message: chrome.i18n.getMessage("errorUndefined") + xhr.statusText
             }, function(notificationId) {});
         };
@@ -70,7 +70,7 @@ function getStatus()
             chrome.notifications.create(element.name, {
                 type: 'basic',
                 title: element.name,
-                iconUrl: "error.png",
+                iconUrl: "images/error.png",
                 message: chrome.i18n.getMessage("errorTimeout") + xhr.timeout + 'ms'
             }, function(notificationId) {});
         };

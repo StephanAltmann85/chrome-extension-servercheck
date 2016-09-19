@@ -4,14 +4,14 @@
   "name": "ServerCheck",
   "default_locale": "en",
   "description": "Extension",
-  "version": "1.0.1",
+  "version": "1.0.2",
 
   "browser_action": {
-    "default_icon": "icon.png",
+    "default_icon": "images/icon.png",
     "default_popup": "popup.html"
   },
 
-  "icons": { "128": "icon_128.png" },
+  "icons": { "128": "images/icon_128.png" },
 
   "background": {
     "scripts": ["background.js"]
