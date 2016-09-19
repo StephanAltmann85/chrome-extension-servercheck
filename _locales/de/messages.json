@@ -11,6 +11,14 @@
     "message": "Prüfung alle",
     "description": "Label for interval field"
   },
+  "optionsTimeout": {
+    "message": "Sekunden",
+    "description": "Unit of timeout interval"
+  },
+  "timeoutLabel": {
+    "message": "Timeout nach ",
+    "description": "Label for timeout interval field"
+  },
   "errorTimeout": {
     "message": "Connection timed out after ",
     "description": "Error message for timeouts"

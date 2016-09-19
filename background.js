@@ -31,11 +31,16 @@ function getStatus()
     }
     else var elements = { elements: []};
 
+    //get relevant options
+    var timeout = localStorage.getItem("timeout");
+    if(!isNaN(timeout) && timeout >= 1) timeout = timeout * 1000;
+    else timeout = 5000;
+
     elements.elements.forEach(function(element, index) {
         var xhr = getReq();
 
         xhr.open("GET", element.name, true);
-        xhr.timeout = 5000;
+        xhr.timeout = timeout;
         xhr.onload = function (e)
         {
             if(xhr.readyState === 4 && xhr.status && xhr.status >= 200 && xhr.status <= 300)

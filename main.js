@@ -1,9 +1,12 @@
 $(document).ready(function() {
+    var elTimeoutInterval = $( "#timeoutInterval" );
     var elInterval = $( "#interval" );
     var elListElements = $( "#listElements" );
     var elOptionsMainLabel = $("#options");
     var elOptionsUnit = $("#optionsUnit");
+    var elTimeoutUnit = $("#timeoutUnit");
     var elIntervalLabel = $("#intervalLabel");
+    var elTimeoutLabel = $("#timeoutLabel");
 
     /* #########################
      ## get translations
@@ -11,11 +14,14 @@ $(document).ready(function() {
     elOptionsMainLabel.html(chrome.i18n.getMessage("optionsMainLabel"));
     elOptionsUnit.html(chrome.i18n.getMessage("optionsUnit"));
     elIntervalLabel.html(chrome.i18n.getMessage("intervalLabel"));
+    elTimeoutLabel.html(chrome.i18n.getMessage("timeoutLabel"));
+    elTimeoutUnit.html(chrome.i18n.getMessage("optionsTimeout"));
 
     /* #########################
      ## initial data association
      ###########################  */
     elInterval.val(localStorage.getItem("interval"));
+    elTimeoutInterval.val(localStorage.getItem("timeout"));
     if(localStorage.getItem("elements")) {
         var elements = JSON.parse(localStorage.getItem("elements"));
 
@@ -94,6 +100,18 @@ $(document).ready(function() {
         {
             //save interval option & reload background task
             localStorage.setItem("interval", val);
+            chrome.extension.getBackgroundPage().window.location.reload(true);
+        }
+    });
+
+    //store timeout interval
+    elTimeoutInterval.on('change', function(event) {
+        var val = parseInt($( this).val());
+
+        if(!isNaN(val) && val >= 1)
+        {
+            //save interval option & reload background task
+            localStorage.setItem("timeout", val);
             chrome.extension.getBackgroundPage().window.location.reload(true);
         }
     });

@@ -4,7 +4,7 @@
   "name": "ServerCheck",
   "default_locale": "en",
   "description": "Extension",
-  "version": "1.0",
+  "version": "1.0.1",
 
   "browser_action": {
     "default_icon": "icon.png",
