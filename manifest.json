@@ -2,6 +2,7 @@
   "manifest_version": 2,
 
   "name": "ServerCheck",
+  "default_locale": "en",
   "description": "Extension",
   "version": "1.0",
 

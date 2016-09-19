@@ -1,0 +1,14 @@
+{
+  "optionsMainLabel": {
+    "message": "Options",
+    "description": "Label for Option"
+  },
+  "optionsUnit": {
+    "message": "Minuten",
+    "description": "Unit of interval"
+  },
+  "intervalLabel": {
+    "message": "Prüfen alle",
+    "description": "Label for interval field"
+  }
+}

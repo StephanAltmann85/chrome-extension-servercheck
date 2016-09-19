@@ -6,21 +6,25 @@
       body {
         font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
         font-size: 100%;
-        background-color: #494a48;
+        background-color: #ffffff;
         width: 250px;
+        padding: 0;
+        margin: 0;
       }
       #title, #options {
         font-size: 12px;
-        color: #ffffff;
         font-weight: bold;
         width: 100%;
-        border-bottom: 1px solid #666;
-        padding: 5px 0;
+        padding: 5px 5px;
       }
+      #title {
+        background-color: #96db37;
+        color: #ffffff;
+      }
+
       #listElements {
         width: 100%;
         border-bottom: 1px solid #666;
-        padding: 5px 0;
       }
 
       #formAdd {
@@ -39,7 +43,6 @@
         border: 1px solid #666;
         font-size: 12px;
         height: 20px;
-
       }
       input[type="button"] {
         border-radius: 50%;
@@ -50,10 +53,29 @@
         width: 100%;
         padding: 5px 0;
       }
+      div[id^="element"]
+      {
+        font-size: 12px;
+        color: #494b49;
+        padding: 5px 5px;
+
+      }
+      .odd
+      {
+        background-color: #dfdfdf;
+      }
+      span[id^="element-del-"]
+      {
+        color: #880000;
+        position: absolute;
+        right: 0;
+        padding-right: 10px;
+        font-size: 12px;
+        cursor: pointer;
+      }
     </style>
 
     <script type="text/javascript" src="jquery.min.js"></script>
-    <script type="text/javascript" src="lib/type.js"></script>
     <script type="text/javascript" src="main.js"></script>
   </head>
   <body>
@@ -63,7 +85,7 @@
       <input type="text" name="elementName" />
       <input type="button" id="buttonSave" value="+" />
     </div>
-    <div id="options">Options</div>
+    <div id="options"></div>
     <div id="formOptions">
       <input type="number" id="interval" name="interval" min="1" step="1">
     </div>

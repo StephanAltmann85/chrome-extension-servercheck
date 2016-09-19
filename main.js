@@ -1,6 +1,5 @@
 //TODO:
 //add icon
-//delete elements
 //hide & show add form
 //periodic checks
 //notifictation
@@ -9,6 +8,12 @@
 $(document).ready(function() {
     var elInterval = $( "#interval" );
     var elListElements = $( "#listElements" );
+    var elOptionsMainLabel = $("#options");
+
+    /* #########################
+     ## get translations
+     ###########################  */
+    elOptionsMainLabel.html(chrome.i18n.getMessage("optionsMainLabel"));
 
     /* #########################
      ## initial data association
@@ -30,14 +35,20 @@ $(document).ready(function() {
         elements.elements.forEach(function(element, index) {
             var child = document.createElement( "div" );
             child.id = "element-" + index;
+            if(index % 2 == 0) child.className = "even";
+            else child.className = "odd";
             child.innerHTML = element.name;
 
+            var linkDel = document.createElement( "span" );
+            linkDel.id = "element-del-" + index;
+            linkDel.innerHTML = "x";
+
+            child.appendChild(linkDel);
             elListElements.append(child);
         });
     }
 
     getList(elements);
-
 
     /* #########################
      ## initial settings
@@ -65,6 +76,18 @@ $(document).ready(function() {
             chrome.extension.getBackgroundPage().window.location.reload(true);
         }
     });
+
+    //delete element
+    $( document ).on('click', "[id^=element-del-]", function(e) {
+        var id = $(this).attr("id").replace('element-del-','');
+
+        elements.elements.splice(id, 1);
+        localStorage.setItem("elements", JSON.stringify(elements));
+
+        getList(elements);
+
+    });
+
 
     //store interval
     elInterval.on('change', function(event) {
