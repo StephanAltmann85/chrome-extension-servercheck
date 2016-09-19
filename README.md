@@ -1,2 +1,15 @@
 # Servercheck - Google Chrome extension
-@Chrome Web store: https://chrome.google.com/webstore/detail/servercheck/dkgflcccfohhfheejkokcjaegnnohieg
+Extension for checking availability of several websites
+
+**Download:** [@Chrome Web Store](https://chrome.google.com/webstore/detail/servercheck/dkgflcccfohhfheejkokcjaegnnohieg)
+
+![Screenshot](http://salty.rocks/sites/default/files/inline-images/screenshot_sc.png)
+
+## Changes
+### 1.0.2
+* added plugin description
+* changed path for images
+* moved jQuery into lib/
+
+### 1.0.1
+* added option for defining timeout value
