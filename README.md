@@ -1,5 +1,7 @@
 # Servercheck - Google Chrome extension
-@Chrome Web store: https://chrome.google.com/webstore/detail/servercheck/dkgflcccfohhfheejkokcjaegnnohieg
+Extension for checking availability of several websites
+
+**Download:** [@Chrome Web Store](https://chrome.google.com/webstore/detail/servercheck/dkgflcccfohhfheejkokcjaegnnohieg)
 
 ## Changes
 ### 1.0.2
