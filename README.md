@@ -3,6 +3,8 @@ Extension for checking availability of several websites
 
 **Download:** [@Chrome Web Store](https://chrome.google.com/webstore/detail/servercheck/dkgflcccfohhfheejkokcjaegnnohieg)
 
+![Screenshot](http://salty.rocks/sites/default/files/inline-images/screenshot_sc.png)
+
 ## Changes
 ### 1.0.2
 * added plugin description
