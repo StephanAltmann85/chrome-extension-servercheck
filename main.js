@@ -1,7 +1,3 @@
-//TODO:
-//periodic checks
-//notifictation
-
 $(document).ready(function() {
     var elInterval = $( "#interval" );
     var elListElements = $( "#listElements" );
@@ -86,7 +82,7 @@ $(document).ready(function() {
         localStorage.setItem("elements", JSON.stringify(elements));
 
         getList(elements);
-
+        chrome.extension.getBackgroundPage().window.location.reload(true);
     });
 
 

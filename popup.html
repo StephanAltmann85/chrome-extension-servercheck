@@ -22,6 +22,19 @@
         color: #ffffff;
       }
 
+      #title > span
+      {
+        color: #333;
+        font-weight: bold;
+        font-size: 10px;
+      }
+
+      #title > span > a
+      {
+        color: #000;
+        font-size: 10px;
+      }
+
       #listElements {
         width: 100%;
         border-bottom: 1px solid #666;
@@ -86,7 +99,7 @@
     <script type="text/javascript" src="main.js"></script>
   </head>
   <body>
-    <div id="title">ServerCheck</div>
+    <div id="title">ServerCheck - <span>powered by <a href="https://salty.rocks">salty.rocks</a></span></div>
     <div id="listElements"></div>
     <div id="formAdd">
       <input type="text" placeholder="http://google.com" name="elementName" />
