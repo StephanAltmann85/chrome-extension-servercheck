@@ -18,6 +18,12 @@ $(document).ready(function() {
     elTimeoutUnit.html(chrome.i18n.getMessage("optionsTimeout"));
 
     /* #########################
+     ## define default values
+     ###########################  */
+    if(!localStorage.getItem("interval")) localStorage.setItem("interval", 5);
+    if(!localStorage.getItem("timeout")) localStorage.setItem("timeout", 5);
+
+    /* #########################
      ## initial data association
      ###########################  */
     elInterval.val(localStorage.getItem("interval"));
